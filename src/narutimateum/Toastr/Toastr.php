@@ -2,7 +2,8 @@
 
 use Illuminate\Contracts\Config\Repository;
 
-class Toastr {
+class Toastr
+{
 
     /**
      * Added notifications
@@ -33,7 +34,8 @@ class Toastr {
      *
      * @internal param \Illuminate\Session\SessionManager $session
      */
-    public function __construct(\Illuminate\Session\SessionManager $session, Repository $config) {
+    public function __construct(\Illuminate\Session\SessionManager $session, Repository $config)
+    {
         $this->session = $session;
         $this->config = $config;
     }
@@ -45,24 +47,26 @@ class Toastr {
      * @internal param bool $flashed Whether to get the
      *
      */
-    public function render() {
+    public function render()
+    {
         $notifications = $this->session->get('toastr::notifications');
-        if(!$notifications) $notifications = [];
+        if (! $notifications) {
+            $notifications = [];
+        }
 
         $output = '<script type="text/javascript">';
         $lastConfig = [];
-        foreach($notifications as $notification) {
-
+        foreach ($notifications as $notification) {
             $config = $this->config->get('toastr.options');
 
-            if(count($notification['options']) > 0) {
+            if (count($notification['options']) > 0) {
                 // Merge user supplied options with default options
                 $config = array_merge($config, $notification['options']);
             }
 
             // Config persists between toasts
-            if($config != $lastConfig) {
-                $output .= 'toastr.options = ' . json_encode($config) . ';';   
+            if ($config != $lastConfig) {
+                $output .= 'toastr.options = ' . json_encode($config) . ';';
                 $lastConfig = $config;
             }
 
@@ -81,18 +85,21 @@ class Toastr {
      * @param string $message The notification's message
      * @param string $title The notification's title
      *
-     * @return bool Returns whether the notification was successfully added or 
+     * @return bool Returns whether the notification was successfully added or
      * not.
      */
-    public function add($type, $message, $title = null,$options = []) {
+    public function add($type, $message, $title = null, $options = [])
+    {
         $allowedTypes = ['error', 'info', 'success', 'warning'];
-        if(!in_array($type, $allowedTypes)) return false;
+        if (! in_array($type, $allowedTypes)) {
+            return false;
+        }
 
         $this->notifications[] = [
             'type' => $type,
             'title' => $title,
             'message' => $message,
-            'options' => $options
+            'options' => $options,
         ];
 
         $this->session->flash('toastr::notifications', $this->notifications);
@@ -104,7 +111,8 @@ class Toastr {
      * @param string $message The notification's message
      * @param string $title The notification's title
      */
-    public function info($message, $title = null, $options = []) {
+    public function info($message, $title = null, $options = [])
+    {
         $this->add('info', $message, $title, $options);
     }
 
@@ -114,7 +122,8 @@ class Toastr {
      * @param string $message The notification's message
      * @param string $title The notification's title
      */
-    public function error($message, $title = null, $options = []) {
+    public function error($message, $title = null, $options = [])
+    {
         $this->add('error', $message, $title, $options);
     }
 
@@ -124,7 +133,8 @@ class Toastr {
      * @param string $message The notification's message
      * @param string $title The notification's title
      */
-    public function warning($message, $title = null, $options = []) {
+    public function warning($message, $title = null, $options = [])
+    {
         $this->add('warning', $message, $title, $options);
     }
 
@@ -134,15 +144,16 @@ class Toastr {
      * @param string $message The notification's message
      * @param string $title The notification's title
      */
-    public function success($message, $title = null, $options = []) {
+    public function success($message, $title = null, $options = [])
+    {
         $this->add('success', $message, $title, $options);
     }
 
     /**
      * Clear all notifications
      */
-    public function clear() {
+    public function clear()
+    {
         $this->notifications = [];
     }
-
 }

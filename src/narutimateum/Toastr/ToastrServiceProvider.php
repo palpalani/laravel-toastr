@@ -2,14 +2,16 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class ToastrServiceProvider extends ServiceProvider {
+class ToastrServiceProvider extends ServiceProvider
+{
 
-	 /**
+     /**
      * Indicates if loading of the provider is deferred.
      *
      * @var bool
      */
     protected $defer = false;
+
     /**
      * Bootstrap the application events.
      *
@@ -21,6 +23,7 @@ class ToastrServiceProvider extends ServiceProvider {
             __DIR__ . '/../../config/config.php' => config_path('toastr.php'),
         ], 'config');
     }
+
     /**
      * Register the service provider.
      *
@@ -32,6 +35,7 @@ class ToastrServiceProvider extends ServiceProvider {
             return new Toastr($app['session'], $app['config']);
         });
     }
+
     /**
      * Get the services provided by the provider.
      *
@@ -41,5 +45,4 @@ class ToastrServiceProvider extends ServiceProvider {
     {
         return ['toastr'];
     }
-
 }
