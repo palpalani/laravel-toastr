@@ -17,7 +17,7 @@ class ToastrServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -31,9 +31,9 @@ class ToastrServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/toastr.php', 'toastr');
+        //$this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'toastr');
 
         $this->app->singleton('toastr', function ($app) {
             return new Toastr($app['session'], $app['config']);
@@ -45,8 +45,10 @@ class ToastrServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
-        return ['toastr'];
+        return [
+            'toastr'
+        ];
     }
 }
