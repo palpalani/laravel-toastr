@@ -1,9 +1,10 @@
-# toastr-5.2-laravel
-toastr.js for Laravel 5.2
+# laravel-toastr
+
+Implements toastr.js for Laravel
 
 **Bower**
 
-to install plugin via Bower run
+to install a plugin via Bower run
 
 ***bower install toastr***
 
@@ -12,8 +13,6 @@ Link to toastr.css  ```<link href="toastr.css" rel="stylesheet"/>```
 
 ###2 
 Link to toastr.js  ```<script src="toastr.js"></script>```
-
-
 
 Installation
 ------------
@@ -60,20 +59,19 @@ to publish the config file for Toastr. Then edit `config/toastr.php` and set the
 <?php
 
 return [
-    'options' => 
-    ["progressBar" => true,
-    "positionClass" =>"toast-bottom-right",
-    "preventDuplicates"=> false,
-    "showDuration" => 300,
-    "hideDuration" => 1000,
-    "timeOut" => 5000,
-    "extendedTimeOut" => 1000,
-    "showEasing" => "swing",
-    "hideEasing"=> "linear",
-    "showMethod" => "fadeIn",
-    "hideMethod" => "fadeOut"]
+    'options' => [
+        "progressBar" => true,
+        "positionClass" =>"toast-bottom-right",
+        "preventDuplicates"=> false,
+        "showDuration" => 300,
+        "hideDuration" => 1000,
+        "timeOut" => 5000,
+        "extendedTimeOut" => 1000,
+        "showEasing" => "swing",
+        "hideEasing"=> "linear",
+        "showMethod" => "fadeIn",
+        "hideMethod" => "fadeOut"]
     ];
-    
 ```
 
 ---
