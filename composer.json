@@ -1,0 +1,24 @@
+{
+    "name": "narutimateum/toastr-5.2-laravel",
+    "description": "toastr.js for Laravel 5.2 easy notification like growl for example",
+    "keywords": ["toastr", "notification", "laravel", "php"],
+    "homepage": "https://github.com/narutimateum/toastr-5.2-laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Harith Roslin",
+            "email": "uharith@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.0",
+        "illuminate/support": ">=5.2.7",
+        "illuminate/session": ">=5.2.7"
+    },
+    "autoload": {
+        "psr-0": {
+            "narutimateum\\Toastr\\": "src/"
+        }
+    }
+}
