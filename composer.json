@@ -53,7 +53,7 @@
                 "palPalani\\Toastr\\ToastrServiceProvider"
             ],
             "aliases": {
-                "LaravelToastrSkeleton": "palPalani\\Toastr\\Facades\\Toastr"
+                "Toastr": "palPalani\\Toastr\\Facades\\Toastr"
             }
         }
     },
