@@ -21,7 +21,7 @@ class ToastrServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../../config/config.php' => config_path('toastr.php'),
+                __DIR__ . '/../config/config.php' => config_path('toastr.php'),
             ], 'laravel-toastr-config');
         }
     }
