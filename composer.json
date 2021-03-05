@@ -30,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "palPalani\\Toastr\\": "src",
+            "palPalani\\Toastr\\": "src"
         }
     },
     "autoload-dev": {
