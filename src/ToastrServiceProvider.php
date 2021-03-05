@@ -19,9 +19,11 @@ class ToastrServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/../../config/config.php' => config_path('toastr.php'),
-        ], 'config');
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../../config/config.php' => config_path('toastr.php'),
+            ], 'laravel-toastr-config');
+        }
     }
 
     /**
@@ -31,6 +33,8 @@ class ToastrServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__ . '/../config/toastr.php', 'toastr');
+
         $this->app->singleton('toastr', function ($app) {
             return new Toastr($app['session'], $app['config']);
         });
