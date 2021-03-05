@@ -2,6 +2,8 @@
     "name": "palpalani/laravel-toastr",
     "description": "Implements toastr.js for Laravel based projects",
     "keywords": [
+        "palpalani",
+        "laravel-toastr",
         "toastr",
         "notification",
         "laravel",
@@ -12,18 +14,49 @@
     "authors": [
         {
             "name": "palPalani",
-            "email": "palani.@gmail.com"
+            "email": "palani.p@gmail.com",
+            "role": "Developer"
         }
     ],
-    "minimum-stability": "dev",
+    ,
     "require": {
         "php": "^7.2|^8.0",
         "illuminate/support": "^5.2|^6.0|^7.0|^8.0",
         "illuminate/session": "^5.2|^6.0|^7.0|^8.0"
     },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.3",
+        "vimeo/psalm": "^4.4"
+    },
     "autoload": {
-        "psr-0": {
-            "palPalani\\Toastr\\": "src/"
+        "psr-4": {
+            "palPalani\\Toastr\\": "src",
         }
-    }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "palPalani\\Toastr\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "vendor/bin/phpunit --colors=always",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "palPalani\\Toastr\\ToastrServiceProvider"
+            ],
+            "aliases": {
+                "LaravelToastrSkeleton": "palPalani\\Toastr\\Facades\\Toastr"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

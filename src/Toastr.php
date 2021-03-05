@@ -1,4 +1,4 @@
-<?php namespace narutimateum\Toastr;
+<?php namespace palPalani\Toastr;
 
 use Illuminate\Contracts\Config\Repository;
 

@@ -1,4 +1,4 @@
-<?php namespace narutimateum\Toastr\Facades;
+<?php namespace palPalani\Toastr\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
