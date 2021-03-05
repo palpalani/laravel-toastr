@@ -48,7 +48,7 @@ class ToastrServiceProvider extends ServiceProvider
     public function provides(): array
     {
         return [
-            'toastr'
+            'toastr',
         ];
     }
 }
