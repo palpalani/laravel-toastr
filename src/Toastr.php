@@ -63,7 +63,7 @@ class Toastr
             $config = $this->config->get('toastr.options');
 
             if (count($notification['options']) > 0) {
-                // Merge user supplied options with default options
+                // Merge user supplied options with default options.
                 $config = array_merge($config, $notification['options']);
             }
 
@@ -73,7 +73,7 @@ class Toastr
                 $lastConfig = $config;
             }
 
-            // Toastr output
+            // Toastr output.
             $output .= 'toastr.' . $notification['type'] . "('" . str_replace("'", "\\'", str_replace(['&lt;', '&gt;'], ['<', '>'], e($notification['message']))) . "'" . (isset($notification['title']) ? ", '" . str_replace("'", "\\'", htmlentities($notification['title'])) . "'" : null) . ');';
         }
         $output .= '</script>';
