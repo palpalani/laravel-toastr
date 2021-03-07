@@ -1,4 +1,6 @@
-<?php namespace palPalani\Toastr;
+<?php
+
+namespace palPalani\Toastr;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,4 +1,6 @@
-<?php namespace palPalani\Toastr;
+<?php
+
+namespace palPalani\Toastr;
 
 use Illuminate\Contracts\Config\Repository;
 
@@ -47,9 +49,10 @@ class Toastr
      * @internal param bool $flashed Whether to get the
      *
      */
-    public function render()
+    public function render(): string
     {
         $notifications = $this->session->get('toastr::notifications');
+
         if (! $notifications) {
             $notifications = [];
         }
