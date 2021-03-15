@@ -97,7 +97,7 @@ class Toastr
             'error',
             'info',
             'success',
-            'warning'
+            'warning',
         ];
 
         if (! in_array($type, $allowedTypes)) {
