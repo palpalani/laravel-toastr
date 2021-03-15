@@ -91,7 +91,7 @@ class Toastr
      * @return null|bool Returns whether the notification was successfully added or
      * not.
      */
-    public function add($type, $message, $title = null, $options = [])
+    public function add($type, $message, $title = null, $options = []): ?bool
     {
         $allowedTypes = ['error', 'info', 'success', 'warning'];
         if (! in_array($type, $allowedTypes)) {
@@ -114,7 +114,7 @@ class Toastr
      * @param string $message The notification's message
      * @param string $title The notification's title
      */
-    public function info($message, $title = null, $options = [])
+    public function info($message, $title = null, $options = []): void
     {
         $this->add('info', $message, $title, $options);
     }
@@ -125,7 +125,7 @@ class Toastr
      * @param string $message The notification's message
      * @param string $title The notification's title
      */
-    public function error($message, $title = null, $options = [])
+    public function error($message, $title = null, $options = []): void
     {
         $this->add('error', $message, $title, $options);
     }
@@ -136,7 +136,7 @@ class Toastr
      * @param string $message The notification's message
      * @param string $title The notification's title
      */
-    public function warning($message, $title = null, $options = [])
+    public function warning($message, $title = null, $options = []): void
     {
         $this->add('warning', $message, $title, $options);
     }
@@ -147,7 +147,7 @@ class Toastr
      * @param string $message The notification's message
      * @param string $title The notification's title
      */
-    public function success($message, $title = null, $options = [])
+    public function success($message, $title = null, $options = []): void
     {
         $this->add('success', $message, $title, $options);
     }
@@ -155,7 +155,7 @@ class Toastr
     /**
      * Clear all notifications
      */
-    public function clear()
+    public function clear(): void
     {
         $this->notifications = [];
     }
