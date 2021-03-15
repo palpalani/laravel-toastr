@@ -24,7 +24,7 @@ class Toastr
     /**
      * Toastr config
      *
-     * @var Illuminate\Config\Repository
+     * @var \Illuminate\Config\Repository
      */
     protected $config;
 
@@ -32,7 +32,7 @@ class Toastr
      * Constructor
      *
      * @param \Illuminate\Session\SessionManager $session
-     * @param Repository|Illuminate\Config\Repository $config
+     * @param Repository|\Illuminate\Config\Repository $config
      *
      * @internal param \Illuminate\Session\SessionManager $session
      */
@@ -88,7 +88,7 @@ class Toastr
      * @param string $message The notification's message
      * @param string $title The notification's title
      *
-     * @return bool Returns whether the notification was successfully added or
+     * @return null|bool Returns whether the notification was successfully added or
      * not.
      */
     public function add($type, $message, $title = null, $options = [])
