@@ -1,11 +1,11 @@
-# laravel-toastr
+# Laravel Toastr
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/palpalani/laravel-toastr.svg?style=flat-square)](https://packagist.org/packages/palpalani/laravel-toastr)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/palpalani/laravel-toastr/run-tests?label=tests)](https://github.com/palpalani/laravel-toastr/actions?query=workflow%3ATests+branch%3Amaster)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/palpalani/laravel-toastr/Check%20&%20fix%20styling?label=code%20style)](https://github.com/palpalani/laravel-toastr/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/palpalani/laravel-toastr.svg?style=flat-square)](https://packagist.org/packages/palpalani/laravel-toastr)
 
-Implements toastr.js for Laravel
+Implements toastr.js for Laravel. Toastr.js is a Javascript library for non-blocking notifications.
 
 ## Installation
 
@@ -15,13 +15,13 @@ to install a plugin via Bower run
 
 ***bower install toastr***
 
-###1
+###
 Link to toastr.css  ```<link href="toastr.css" rel="stylesheet"/>```
 
-###2 
+###
 Link to toastr.js  ```<script src="toastr.js"></script>```
 
-###3
+###
 You can install the package via composer:
 
 ```bash
