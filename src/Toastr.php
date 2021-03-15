@@ -86,14 +86,20 @@ class Toastr
      *
      * @param string $type Could be error, info, success, or warning.
      * @param string $message The notification's message
-     * @param string $title The notification's title
-     *
-     * @return null|bool Returns whether the notification was successfully added or
+     * @param null $title The notification's title
+     * @param array $options
+     * @return bool Returns whether the notification was successfully added or
      * not.
      */
-    public function add($type, $message, $title = null, $options = []): ?bool
+    public function add(string $type, string $message, $title = null, $options = []): bool
     {
-        $allowedTypes = ['error', 'info', 'success', 'warning'];
+        $allowedTypes = [
+            'error',
+            'info',
+            'success',
+            'warning'
+        ];
+
         if (! in_array($type, $allowedTypes)) {
             return false;
         }
@@ -106,15 +112,18 @@ class Toastr
         ];
 
         $this->session->flash('toastr::notifications', $this->notifications);
+
+        return true;
     }
 
     /**
      * Shortcut for adding an info notification
      *
      * @param string $message The notification's message
-     * @param string $title The notification's title
+     * @param null $title The notification's title
+     * @param array $options
      */
-    public function info($message, $title = null, $options = []): void
+    public function info(string $message, $title = null, $options = []): void
     {
         $this->add('info', $message, $title, $options);
     }
@@ -123,9 +132,10 @@ class Toastr
      * Shortcut for adding an error notification
      *
      * @param string $message The notification's message
-     * @param string $title The notification's title
+     * @param null $title The notification's title
+     * @param array $options
      */
-    public function error($message, $title = null, $options = []): void
+    public function error(string $message, $title = null, $options = []): void
     {
         $this->add('error', $message, $title, $options);
     }
@@ -134,9 +144,10 @@ class Toastr
      * Shortcut for adding a warning notification
      *
      * @param string $message The notification's message
-     * @param string $title The notification's title
+     * @param null $title The notification's title
+     * @param array $options
      */
-    public function warning($message, $title = null, $options = []): void
+    public function warning(string $message, $title = null, $options = []): void
     {
         $this->add('warning', $message, $title, $options);
     }
@@ -145,9 +156,10 @@ class Toastr
      * Shortcut for adding a success notification
      *
      * @param string $message The notification's message
-     * @param string $title The notification's title
+     * @param null $title The notification's title
+     * @param array $options
      */
-    public function success($message, $title = null, $options = []): void
+    public function success(string $message, $title = null, $options = []): void
     {
         $this->add('success', $message, $title, $options);
     }
