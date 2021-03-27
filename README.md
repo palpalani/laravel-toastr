@@ -9,11 +9,13 @@ Implements toastr.js for Laravel. Toastr.js is a Javascript library for non-bloc
 
 ## Installation
 
-**Bower**
+### Bower
 
 to install a plugin via Bower run
 
-***bower install toastr***
+```shell
+bower install toastr
+```
 
 ###
 Link to toastr.css  ```<link href="toastr.css" rel="stylesheet"/>```
