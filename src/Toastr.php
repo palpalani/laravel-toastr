@@ -8,7 +8,6 @@ use Illuminate\Contracts\Config\Repository;
 
 class Toastr
 {
-
     /**
      * Added notifications
      *

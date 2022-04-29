@@ -8,7 +8,6 @@ use Illuminate\Support\ServiceProvider;
 
 class ToastrServiceProvider extends ServiceProvider
 {
-
      /**
      * Indicates if loading of the provider is deferred.
      *
