@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/palpalani/laravel-toastr.svg?style=flat-square)](https://packagist.org/packages/palpalani/laravel-toastr)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/palpalani/laravel-toastr/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/palpalani/laravel-toastr/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/palpalani/laravel-toastr/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/palpalani/laravel-toastr/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/palpalani/laravel-toastr/php-cs-fixer.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/palpalani/laravel-toastr/actions?query=workflow%3A"Check+&+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/palpalani/laravel-toastr.svg?style=flat-square)](https://packagist.org/packages/palpalani/laravel-toastr)
 
 Implements toastr.js for Laravel. Toastr.js is a Javascript library for non-blocking notifications.
