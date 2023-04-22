@@ -11,32 +11,26 @@ Implements toastr.js for Laravel. Toastr.js is a Javascript library for non-bloc
 
 ### Bower
 
-to install a plugin via Bower run
-
-```shell
+To install a plugin via Bower run
+```
 bower install toastr
 ```
 
-###
-Link to toastr.css  ```<link href="toastr.css" rel="stylesheet"/>```
+### Composer
 
-###
-Link to toastr.js  ```<script src="toastr.js"></script>```
-
-###
-You can install the package via composer:
-
-```bash
+You can also install the package via composer:
+```
 composer require palpalani/laravel-toastr
 ```
 
-You can publish the config file with:
-```bash
+## Configuration
+
+Publish the config file with
+```
 php artisan vendor:publish --provider="palPalani\Toastr\ToastrServiceProvider" --tag="laravel-toastr-config"
 ```
 
 This is the contents of the published config file:
-
 ```php
 return [
     'options' => [
@@ -55,21 +49,29 @@ return [
 ];
 ```
 
-edit `config/toastr.php` and set the `options` array to whatever you want to pass to Toastr. These options are set as 
+If you want, edit `config/toastr.php` and set the `options` array to whatever you want to pass to Toastr (this step is optional). These options are set as 
 the default options and can be overridden by passing an array of options to any of the methods in the **Usage** section.
 
 ## Usage
------
 
-Include jQuery and [toastr.js](http://codeseven.github.io/toastr/) and plugin styles in your master view template  
+Include jQuery, [toastr.js](http://codeseven.github.io/toastr/) and plugin styles in your master view template.
 
-after everything is done do
-``` html
+Link to toastr.min.css:
+```html
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+```
+
+Link to toastr.min.js:
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+```
+
+After everything is done, insert the string below in your template just before body closing tag or after toastr.js script instantiated in your file.
+```blade
 {!! Toastr::render() !!}
 ```
-in your template just before body closing tag or after toastr.js script instantiated in your file.
 
-You can use these methods in your controllers to insert a toast:
+Then use these methods in your controllers to insert a toast:
   - `Toastr::warning($message, $title = null, $options = [])` - add a warning toast
   - `Toastr::error($message, $title = null, $options = [])` - add an error toast
   - `Toastr::info($message, $title = null, $options = [])` - add an info toast
@@ -77,12 +79,11 @@ You can use these methods in your controllers to insert a toast:
   - `Toastr::add($type: warning|error|info|success, $message, $title = null, $options = [])` - add a toast
   - **`Toastr::clear()` - clear all current toasts** don't forget to use it
 
----
 For a list of available options, see [toastr.js' documentation](http://codeseven.github.io/toastr/demo.html).
 
 ## Testing
 
-```bash
+```
 composer test
 ```
 
