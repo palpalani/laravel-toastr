@@ -4,6 +4,11 @@
         "tests"
     ],
     "rules": {
+        "@PER-CS": true,
+        "@PHP80Migration": true,
+        "@PHP80Migration:risky": true,
+        "@PHP81Migration": true,
+        "@PHP82Migration": true,
         "concat_space": {
             "spacing": "one"
         },
