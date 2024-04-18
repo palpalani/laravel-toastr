@@ -9,16 +9,14 @@ use Illuminate\Support\ServiceProvider;
 class ToastrServiceProvider extends ServiceProvider
 {
     /**
-    * Indicates if loading of the provider is deferred.
-    *
-    * @var bool
-    */
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
     protected $defer = false;
 
     /**
      * Bootstrap the application events.
-     *
-     * @return void
      */
     public function boot(): void
     {
@@ -31,22 +29,16 @@ class ToastrServiceProvider extends ServiceProvider
 
     /**
      * Register the service provider.
-     *
-     * @return void
      */
     public function register(): void
     {
         //$this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'toastr');
 
-        $this->app->singleton('toastr', function ($app) {
-            return new Toastr($app['session'], $app['config']);
-        });
+        $this->app->singleton('toastr', fn($app) => new Toastr($app['session'], $app['config']));
     }
 
     /**
      * Get the services provided by the provider.
-     *
-     * @return array
      */
     public function provides(): array
     {
