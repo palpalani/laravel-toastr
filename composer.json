@@ -1,6 +1,6 @@
 {
     "name": "palpalani/laravel-toastr",
-    "description": "Implements toastr.js for Laravel based projects",
+    "description": "Implements toastr.js for Laravel projects",
     "keywords": [
         "palpalani",
         "laravel-toastr",
@@ -40,7 +40,20 @@
         }
     },
     "scripts": {
-        "psalm": "vendor/bin/psalm",
+        "post-autoload-dump": "@composer run prepare",
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": [
+            "@composer run prepare",
+            "@php vendor/bin/testbench workbench:build --ansi"
+        ],
+        "start": [
+            "Composer\\Config::disableProcessTimeout",
+            "@composer run build",
+            "@php vendor/bin/testbench serve"
+        ],
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint",
         "test": "vendor/bin/phpunit --colors=always",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
     },
