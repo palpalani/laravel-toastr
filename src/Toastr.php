@@ -32,8 +32,7 @@ class Toastr
     /**
      * Constructor
      *
-     * @param \Illuminate\Session\SessionManager $session
-     * @param Repository|\Illuminate\Config\Repository $config
+     * @param  Repository|\Illuminate\Config\Repository  $config
      *
      * @internal param \Illuminate\Session\SessionManager $session
      */
@@ -46,9 +45,7 @@ class Toastr
     /**
      * Render the notifications' script tag
      *
-     * @return string
      * @internal param bool $flashed Whether to get the
-     *
      */
     public function render(): string
     {
@@ -85,12 +82,11 @@ class Toastr
     /**
      * Add a notification
      *
-     * @param string $type Could be error, info, success, or warning.
-     * @param string $message The notification's message
-     * @param null|string $title The notification's title
-     * @param array $options
+     * @param  string  $type  Could be error, info, success, or warning.
+     * @param  string  $message  The notification's message
+     * @param  null|string  $title  The notification's title
      * @return bool Returns whether the notification was successfully added or
-     * not.
+     *              not.
      */
     public function add(string $type, string $message, ?string $title = null, array $options = []): bool
     {
@@ -120,9 +116,8 @@ class Toastr
     /**
      * Shortcut for adding an info notification
      *
-     * @param string $message The notification's message
-     * @param null|string $title The notification's title
-     * @param array $options
+     * @param  string  $message  The notification's message
+     * @param  null|string  $title  The notification's title
      */
     public function info(string $message, ?string $title = null, array $options = []): void
     {
@@ -132,9 +127,8 @@ class Toastr
     /**
      * Shortcut for adding an error notification
      *
-     * @param string $message The notification's message
-     * @param null|string $title The notification's title
-     * @param array $options
+     * @param  string  $message  The notification's message
+     * @param  null|string  $title  The notification's title
      */
     public function error(string $message, ?string $title = null, array $options = []): void
     {
@@ -144,9 +138,8 @@ class Toastr
     /**
      * Shortcut for adding a warning notification
      *
-     * @param string $message The notification's message
-     * @param null|string $title The notification's title
-     * @param array $options
+     * @param  string  $message  The notification's message
+     * @param  null|string  $title  The notification's title
      */
     public function warning(string $message, ?string $title = null, array $options = []): void
     {
@@ -156,9 +149,8 @@ class Toastr
     /**
      * Shortcut for adding a success notification
      *
-     * @param string $message The notification's message
-     * @param null|string $title The notification's title
-     * @param array $options
+     * @param  string  $message  The notification's message
+     * @param  null|string  $title  The notification's title
      */
     public function success(string $message, ?string $title = null, array $options = []): void
     {
