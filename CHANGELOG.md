@@ -2,6 +2,22 @@
 
 All notable changes to `laravel-toastr` will be documented in this file.
 
+## Release v0.4.0 - 2025-03-03
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.0.0 to 2.1.0 by @dependabot in https://github.com/palpalani/laravel-toastr/pull/30
+* Bump dependabot/fetch-metadata from 2.1.0 to 2.2.0 by @dependabot in https://github.com/palpalani/laravel-toastr/pull/31
+* Bump actions/cache from 4.0.2 to 4.1.0 by @dependabot in https://github.com/palpalani/laravel-toastr/pull/32
+* Bump actions/cache from 4.1.0 to 4.1.1 by @dependabot in https://github.com/palpalani/laravel-toastr/pull/33
+* Bump actions/cache from 4.1.1 to 4.1.2 by @dependabot in https://github.com/palpalani/laravel-toastr/pull/34
+* Bump actions/cache from 4.1.2 to 4.2.0 by @dependabot in https://github.com/palpalani/laravel-toastr/pull/35
+* Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/palpalani/laravel-toastr/pull/36
+* Bump actions/cache from 4.2.0 to 4.2.1 by @dependabot in https://github.com/palpalani/laravel-toastr/pull/37
+* Bump actions/cache from 4.2.1 to 4.2.2 by @dependabot in https://github.com/palpalani/laravel-toastr/pull/38
+
+**Full Changelog**: https://github.com/palpalani/laravel-toastr/compare/0.3.0...0.4.0
+
 ## Release v0.3.0 - 2024-04-18
 
 ### What's Changed
